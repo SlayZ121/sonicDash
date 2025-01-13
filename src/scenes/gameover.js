@@ -5,19 +5,11 @@ export default function gameOver(citySfx) {
   let bestscore = k.getData("best-score");
   const currentScore = k.getData("current-score");
 
-  const ranks = [
-    "Terrible",
-    "Bad",
-    "Not bad",
-    "Average",
-    "Good",
-    "Excellent",
-    "Outstanding",
-  ];
-  const rankvalues = [50, 80, 100, 150, 250, 400, 500];
+  const ranks = ["F", "E", "D", "C", "B", "A", "A+"];
+  const rankvalues = [50, 80, 100, 150, 250, 400, 450];
 
-  let currrank = "Boo";
-  let bestrank = "Boo";
+  let currrank = "F";
+  let bestrank = "F";
 
   for (let i = 0; i < rankvalues.length; i++) {
     if (rankvalues[i] < currentScore) {

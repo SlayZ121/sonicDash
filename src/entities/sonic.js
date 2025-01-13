@@ -7,7 +7,7 @@ export function makeSonic(pos) {
     k.anchor("center"), //change origin of game obj
     //default:top-left
     k.pos(pos),
-    k.body({ jumpForce: 1700 }),
+    k.body({ jumpForce: 1400 }),
     {
       ringCollectUI: null,
       setControls() {
@@ -30,7 +30,7 @@ export function makeSonic(pos) {
   sonic.ringCollectUI = sonic.add([
     k.text("", { font: "mania", size: 24 }),
     k.color(255, 255, 0),
-    k.anchor("center"),//values are relative to sonic
+    k.anchor("center"), //values are relative to sonic
     k.pos(30, 10),
   ]);
 

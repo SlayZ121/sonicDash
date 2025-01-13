@@ -68,7 +68,7 @@ export default function game() {
 
   let gamespeed = 300;
   k.loop(1, () => {
-    gamespeed += 30;
+    gamespeed += 20;
   });
 
   const createBug = () => {
@@ -100,9 +100,13 @@ export default function game() {
     ring.onExitScreen(() => {
       if (ring.pos.x < 0) k.destroy(ring);
     });
-
-    const waittime = k.rand(0.5, 3);
-    k.wait(waittime, spawnRing);
+    if (gamespeed < 2500) {
+      const waittime = k.rand(0.5, 1.5);
+      k.wait(waittime, spawnRing);
+    } else {
+      const waittime = k.rand(0.1, 0.3);
+      k.wait(waittime, spawnRing);
+    }
   };
 
   spawnRing();
